@@ -5,11 +5,11 @@ import dj_database_url
 # Inicializar environ
 env = environ.Env()
 WSGI_APPLICATION = 'streamz_backend.wsgi.application'
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0d8s3hf#k6vn5f2p&13=ysl@psa74ub^_3$dn83g7_nwl*$u_v'
-
 # Leer archivo .env si existe
 environ.Env.read_env()
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env('SECRET_KEY')
 
 ROOT_URLCONF = 'streamz_backend.urls'
 
